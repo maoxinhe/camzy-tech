@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>喵科大 · 官网 | Camzy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23F2A9C0'/%3E%3Cpath d='M8 18c0-4 3-7 8-7s8 3 8 7c0 3-3 5-8 5s-8-2-8-5z' fill='%23fff'/%3E%3Ccircle cx='13' cy='17' r='1.4' fill='%233A2A32'/%3E%3Ccircle cx='19' cy='17' r='1.4' fill='%233A2A32'/%3E%3Ccircle cx='16' cy='20' r='1.1' fill='%23E985A5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
+<style>
+:root{
+  --cream:#FBF3EF;
+  --bg:#FDF7F2;
+  --card:#FFFFFF;
+  --pink-100:#FBE3EA;
+  --pink-200:#F7C7D6;
+  --pink-300:#F2A9C0;
+  --pink:#E985A5;
+  --rose:#D86184;
+  --rose-deep:#C04E71;
+  --lav:#E6DFF6;
+  --ink:#3A2A32;
+  --muted:#7E6C74;
+  --line:#EFDEE4;
+  --shadow:0 14px 40px -18px rgba(201,104,138,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+svg.icon{width:1em;height:1em;vertical-align:-.12em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+
+/* ---------- 顶部导航 ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(253,247,242,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:34px;height:34px;border-radius:11px;box-shadow:var(--shadow)}
+.brand-name{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:21px;font-weight:900;color:var(--rose-deep);letter-spacing:1px}
+.nav-links{display:none;align-items:center;gap:26px}
+.nav-links a{font-size:15px;font-weight:500;color:var(--ink);position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--pink);border-radius:2px;transition:width .25s}
+.nav-links a:hover{color:var(--rose)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:none}
+.btn{padding:11px 20px;border-radius:999px;font-weight:700;font-size:14.5px;transition:transform .18s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--rose));color:#fff;box-shadow:0 10px 24px -10px rgba(216,97,132,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(216,97,132,.8)}
+.btn-ghost{background:#fff;color:var(--rose-deep);border:1.5px solid var(--pink-300)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--rose)}
+.burger{display:flex;flex-direction:column;gap:5px;padding:10px;cursor:pointer}
+.burger span{width:22px;height:2.4px;background:var(--ink);border-radius:2px;transition:.3s}
+.mobile-menu{position:fixed;inset:0;top:64px;z-index:40;background:var(--bg);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s ease,transform .3s ease,visibility .3s;padding:28px 26px;display:flex;flex-direction:column;gap:6px}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu a{font-size:19px;font-weight:700;color:var(--ink);padding:13px 6px;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:20px;text-align:center}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(1200px 520px at 85% -10%,var(--pink-100),transparent 60%),
+  radial-gradient(900px 480px at 0% 100%,var(--lav),transparent 55%),
+  var(--bg)}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:70px 0 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--rose);background:#fff;border:1px solid var(--pink-200);padding:7px 16px;border-radius:999px;margin-bottom:22px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(233,133,165,.5)}50%{box-shadow:0 0 0 6px rgba(233,133,165,0)}}
+.hero-title{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:52px;line-height:1.1;font-weight:900;color:var(--rose-deep);letter-spacing:4px}
+.hero-sub{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:20px;font-weight:700;color:var(--pink);margin-top:10px}
+.hero-desc{max-width:620px;margin:20px auto 0;font-size:16px;color:var(--muted)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.hero-mascot{position:relative;margin:40px auto 0;width:min(300px,74vw)}
+.hero-mascot .halo{position:absolute;inset:-18px;background:radial-gradient(circle,rgba(233,133,165,.32),transparent 62%);border-radius:50%;filter:blur(2px);animation:float 5s ease-in-out infinite}
+.hero-mascot img{position:relative;width:100%;border-radius:34px;background:#fff;box-shadow:0 26px 60px -24px rgba(192,78,113,.5);animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.cloud{position:absolute;z-index:1;opacity:.55;color:var(--pink-200)}
+.cloud.c1{top:120px;left:6%}
+.cloud.c2{top:300px;right:8%;color:var(--lav)}
+.cloud.c3{bottom:60px;left:16%}
+.scroll-hint{display:none}
+
+/* ---------- 区块通用 ---------- */
+.section{padding:74px 0}
+.sec-head{text-align:center;max-width:720px;margin:0 auto 46px}
+.sec-kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:3px;color:var(--rose);margin-bottom:12px}
+.sec-title{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:30px;font-weight:900;color:var(--rose-deep);letter-spacing:2px}
+.sec-desc{color:var(--muted);font-size:15.5px;margin-top:12px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 生态产品 ---------- */
+.products{background:var(--cream)}
+.p-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.p-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 22px;display:flex;flex-direction:column;gap:12px;text-align:left;transition:transform .22s,box-shadow .22s,border-color .22s;width:100%}
+.p-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--pink-200)}
+.p-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.p-ic{width:50px;height:50px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:25px;flex:none}
+.p-ic.c-pink{background:var(--pink-100);color:var(--rose)}
+.p-ic.c-lav{background:var(--lav);color:#6f5fb0}
+.p-ic.c-sky{background:#E3F0FB;color:#3f7fb4}
+.badge{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap}
+.badge.live{background:var(--pink-100);color:var(--rose-deep)}
+.badge.dev{background:#EEE9E4;color:var(--muted)}
+.p-name{font-size:18px;font-weight:900;color:var(--ink)}
+.p-desc{font-size:14.5px;color:var(--muted);flex:1}
+.p-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.p-meta code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;color:#a06a82;background:var(--cream);padding:3px 8px;border-radius:7px;font-size:11.5px;word-break:break-all}
+.p-go{font-weight:800;color:var(--rose);font-size:13px}
+
+/* ---------- 基础设施 ---------- */
+.infra-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.comm-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.i-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;display:flex;gap:15px;align-items:flex-start;transition:transform .22s,box-shadow .22s;width:100%;text-align:left}
+.i-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.i-ic{width:46px;height:46px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;font-size:23px;background:var(--pink-100);color:var(--rose)}
+.i-body{flex:1;min-width:0}
+.i-name{font-size:16.5px;font-weight:800;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.i-desc{font-size:13.5px;color:var(--muted);margin-top:3px}
+
+/* ---------- 关于 ---------- */
+.about-grid{display:flex;flex-direction:column;gap:30px;align-items:center}
+.about-card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:34px 26px;box-shadow:var(--shadow);max-width:720px;text-align:center}
+.about-logo{width:86px;height:86px;border-radius:26px;margin:0 auto 20px;box-shadow:var(--shadow)}
+.about-card h3{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:26px;font-weight:900;color:var(--rose-deep);margin-bottom:14px}
+.about-card p{color:var(--muted);font-size:15.5px}
+.about-card strong{color:var(--rose-deep);font-weight:800}
+.principle{display:grid;grid-template-columns:1fr;gap:14px;width:100%;max-width:720px}
+.pr{background:#fff;border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:14px;padding:16px 18px}
+.pr b{color:var(--ink);font-size:15.5px}
+.pr span{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+
+/* ---------- Footer ---------- */
+footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1fr;gap:34px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-brand img{width:38px;height:38px;border-radius:12px}
+.foot-brand b{font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:19px;font-weight:900;color:#fff;letter-spacing:1px}
+.foot-brand p{font-size:13px;color:#A8939C}
+.foot h4{color:#fff;font-size:14.5px;font-weight:800;margin-bottom:14px;letter-spacing:1px}
+.foot a{display:block;color:#C7B3BC;font-size:14px;padding:5px 0;transition:color .2s}
+.foot a:hover{color:var(--pink-300)}
+.foot-tags{display:flex;flex-wrap:wrap;gap:8px}
+.foot-tags span{font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;background:rgba(255,255,255,.07);padding:5px 10px;border-radius:8px;color:#C7B3BC}
+.foot-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#97838C;text-align:center}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,80px);background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:12px 22px;border-radius:999px;box-shadow:0 16px 40px -12px rgba(0,0,0,.4);opacity:0;transition:.32s;z-index:99;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+/* ---------- 响应式 ---------- */
+@media (min-width:768px){
+  .nav-links{display:flex}
+  .nav-cta{display:inline-block}
+  .burger{display:none}
+  .mobile-menu{display:none}
+  .hero-title{font-size:72px}
+  .hero-sub{font-size:24px}
+  .sec-title{font-size:36px}
+  .p-grid{grid-template-columns:repeat(3,1fr)}
+  .infra-grid{grid-template-columns:repeat(2,1fr)}
+  .comm-grid{grid-template-columns:repeat(3,1fr)}
+  .principle{grid-template-columns:1fr 1fr}
+  .about-grid{align-items:center}
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}
+}
+@media (min-width:1024px){
+  .p-grid{grid-template-columns:repeat(4,1fr)}
+  .infra-grid{grid-template-columns:repeat(4,1fr)}
+  .hero-in{padding:92px 0 70px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2"/><path d="M12 15 9 12C11 5 15 2.5 20 2c.5 5-2 9-9 11z"/><path d="M9 12 3.5 14c-.5.2-.6 1 0 1.3L7 17"/><circle cx="15" cy="9" r="1"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.4 3.8 5.5 3.8 9S14.5 18.6 12 21c-2.5-2.4-3.8-5.5-3.8-9S9.5 5.4 12 3z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 1 1 .6-7.95A5.5 5.5 0 0 1 18 9.5 3.8 3.8 0 0 1 17 17H7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-office" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M9 8h6M9 13h6M9 18h6"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 9h10a4 4 0 0 1 4 4v2a2 2 0 0 1-4 0v-1H7v1a2 2 0 0 1-4 0v-2a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5H9.5"/><circle cx="17" cy="11" r=".6"/><circle cx="18.8" cy="12.8" r=".6"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="M11 11 20 20M15.5 15.5 18 18M13.5 17.5 16 20"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="m7 9 3 3-3 3M12 15h5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 4 5-4"/><path d="M4 19h16"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.5 2.5 7.5 7 8-4.5.5-6.4 3.5-7 8-.6-4.5-2.5-7.5-7-8 4.5-.5 6.4-3.5 7-8z"/><path d="M19 3c.3 2 1.2 3.4 3.5 3.7C20.2 7 19.3 8.4 19 10.4c-.3-2-1.2-3.4-3.5-3.7C17.8 6.4 18.7 5 19 3z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 12V3.5M12 12H3.5M12 12h8.5M12 12v8.5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 4c3.5-1.8 6.5 1.8 11 0v8c-4.5 1.8-7.5-1.8-11 0"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 10h17M10 10v10"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.7-3.4 2.9-5.2 5.5-5.2s4.8 1.8 5.5 5.2"/><path d="M15.8 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17.2 15.1c1.8.8 3 2.4 3.3 4.9"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.3-3.9-.9L3 21l1.6-5A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+    <symbol id="i-feedback" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.7-.3-3.9-.9L3 21l1.6-5A8.5 8.5 0 1 1 21 11.5z"/><path d="M12 8v4.2"/><circle cx="12" cy="15.4" r=".4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home" aria-label="喵科大首页">
+      <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Jf8nblxCmoQ1RCxjaZfcr2NXnQd" alt="喵科大吉祥物">
+      <span class="brand-name">喵科大</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#products">生态</a>
+      <a href="#infra">基建</a>
+      <a href="#community">社区</a>
+      <a href="#about">关于</a>
+    </nav>
+    <a href="#products" class="btn btn-primary nav-cta">进入生态</a>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products">生态</a>
+  <a href="#infra">基建</a>
+  <a href="#community">社区</a>
+  <a href="#about">关于</a>
+  <a href="#products" class="btn btn-primary">进入生态</a>
+</div>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <svg class="cloud c1" width="120" height="60" viewBox="0 0 120 60" aria-hidden="true"><path d="M18 50a14 14 0 0 1 2-27.8A20 20 0 0 1 60 15a16 16 0 0 1 40 12A12 12 0 0 1 98 50H18z" fill="currentColor"/></svg>
+    <svg class="cloud c2" width="90" height="46" viewBox="0 0 120 60" aria-hidden="true"><path d="M18 50a14 14 0 0 1 2-27.8A20 20 0 0 1 60 15a16 16 0 0 1 40 12A12 12 0 0 1 98 50H18z" fill="currentColor"/></svg>
+    <svg class="cloud c3" width="70" height="36" viewBox="0 0 120 60" aria-hidden="true"><path d="M18 50a14 14 0 0 1 2-27.8A20 20 0 0 1 60 15a16 16 0 0 1 40 12A12 12 0 0 1 98 50H18z" fill="currentColor"/></svg>
+    <div class="wrap hero-in">
+      <span class="eyebrow"><span class="dot"></span> CAMZY · 喵科大生态</span>
+      <h1 class="hero-title">喵科大</h1>
+      <p class="hero-sub">一朵软萌的云，撑起一整个数字生态</p>
+      <p class="hero-desc">喵科大是「梦之韵 / MCY」团队的品牌与技术生态：从 MC 启动器、浏览器、企业网盘，到统一登录与云端基建，把玩家体验和团队工具，做成一套温柔又可靠的基础设施。</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">查看生态</a>
+        <a href="#about" class="btn btn-ghost">关于我们</a>
+      </div>
+      <div class="hero-mascot">
+        <div class="halo" aria-hidden="true"></div>
+        <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Jf8nblxCmoQ1RCxjaZfcr2NXnQd" alt="喵科大吉祥物">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 生态产品 ===== -->
+  <section class="section products" id="products">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-kicker">ECOSYSTEM</span>
+        <h2 class="sec-title">生态 · 我们在做的每一件事</h2>
+        <p class="sec-desc">围绕 MC 玩家与团队工作流，自研从启动器到云盘的全套产品。点击「已上线」卡片可直接访问，开发中的项目敬请期待。</p>
+      </div>
+      <div class="p-grid">
+        <article class="p-card reveal" data-url="https://mcy.camzy.tech">
+          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-rocket" xlink:href="#i-rocket"/></svg></span><span class="badge live">已上线</span></div>
+          <div class="p-name">MCY 启动器</div>
+          <p class="p-desc">梦之韵专用启动器，自动更新、云端版本同步，一键开玩。</p>
+          <div class="p-meta"><code>mcy.camzy.tech</code><span class="p-go">访问 ↗</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="喵科大浏览器开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-lav"><svg class="icon"><use href="#i-globe" xlink:href="#i-globe"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">喵科大浏览器</div>
+          <p class="p-desc">把整个喵科大生态装进浏览器的未来入口。</p>
+          <div class="p-meta"><code>e.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-url="https://pan.liminalily.com">
+          <div class="p-top"><span class="p-ic c-sky"><svg class="icon"><use href="#i-cloud" xlink:href="#i-cloud"/></svg></span><span class="badge live">已上线</span></div>
+          <div class="p-name">企业网盘</div>
+          <p class="p-desc">喵科大统一企业网盘，文件随取随用、多端同步。</p>
+          <div class="p-meta"><code>pan.liminalily.com</code><span class="p-go">访问 ↗</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="企业邮箱开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-lav"><svg class="icon"><use href="#i-mail" xlink:href="#i-mail"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">企业邮箱</div>
+          <p class="p-desc">属于团队的专属邮箱，沟通更正式、更体面。</p>
+          <div class="p-meta"><code>mail.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-url="https://docs.camzy.tech">
+          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-doc" xlink:href="#i-doc"/></svg></span><span class="badge live">已上线</span></div>
+          <div class="p-name">文档中心</div>
+          <p class="p-desc">产品文档、开发文档与使用指南，一站查阅。</p>
+          <div class="p-meta"><code>docs.camzy.tech</code><span class="p-go">访问 ↗</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="WPS 云集成开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-sky"><svg class="icon"><use href="#i-office" xlink:href="#i-office"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">WPS 云集成</div>
+          <p class="p-desc">让文档在 WPS 与喵科大云之间无缝流转。</p>
+          <div class="p-meta"><code>office.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="网页 MC 开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-lav"><svg class="icon"><use href="#i-game" xlink:href="#i-game"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">网页 MC</div>
+          <p class="p-desc">在浏览器里直接开玩 MC，免下载、随开随玩。</p>
+          <div class="p-meta"><code>mc.web.camzy.uno</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="喵科大 根域杀手开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-target" xlink:href="#i-target"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">喵科大 根域杀手</div>
+          <p class="p-desc">喵科大在根域层面的技术探索项目。</p>
+          <div class="p-meta"><code>killer.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="喵科大 启动页开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-sky"><svg class="icon"><use href="#i-flag" xlink:href="#i-flag"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">喵科大 启动页</div>
+          <p class="p-desc">喵科大的统一启动页，从这里出发。</p>
+          <div class="p-meta"><code>hao.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="喵科大官网(dev)开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-lav"><svg class="icon"><use href="#i-layout" xlink:href="#i-layout"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">喵科大官网(dev)</div>
+          <p class="p-desc">官网的开发预览环境，提前看新变化。</p>
+          <div class="p-meta"><code>miao.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+        <article class="p-card reveal" data-toast="官网(dev)开发中，敬请期待">
+          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-layout" xlink:href="#i-layout"/></svg></span><span class="badge dev">开发中</span></div>
+          <div class="p-name">官网(dev)</div>
+          <p class="p-desc">官网主域名，正在迭代中。</p>
+          <div class="p-meta"><code>www.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 基础设施 ===== -->
+  <section class="section" id="infra">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-kicker">INFRASTRUCTURE</span>
+        <h2 class="sec-title">基建 · 先底座，后应用</h2>
+        <p class="sec-desc">统一登录、后台管理、文件分发与工作站——上层产品都跑在自建的底座上。</p>
+      </div>
+      <div class="infra-grid">
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-key" xlink:href="#i-key"/></svg></span><div class="i-body"><div class="i-name">SSO 统一登录 <span class="badge live">已上线</span></div><p class="i-desc">一个账号，通行整个喵科大生态。</p></div></article>
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-terminal" xlink:href="#i-terminal"/></svg></span><div class="i-body"><div class="i-name">后台工作站 <span class="badge live">已上线</span></div><p class="i-desc">管理喵科大生态的总控台。</p></div></article>
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-download" xlink:href="#i-download"/></svg></span><div class="i-body"><div class="i-name">文件拉取 <span class="badge live">已上线</span></div><p class="i-desc">稳定可靠的文件分发与拉取通道。</p></div></article>
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg></span><div class="i-body"><div class="i-name">慧管家工作站 <span class="badge live">已上线</span></div><p class="i-desc">日常运营与协作的工作台。</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 社区服务 ===== -->
+  <section class="section" id="community">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-kicker">COMMUNITY</span>
+        <h2 class="sec-title">社区与服务</h2>
+        <p class="sec-desc">玩家门户、论坛与反馈——玩家和团队之间的每一道门。</p>
+      </div>
+      <div class="comm-grid">
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-users" xlink:href="#i-users"/></svg></span><div class="i-body"><div class="i-name">玩家门户 <span class="badge live">已上线</span></div><p class="i-desc">账号、资源与专属服务一站直达。</p></div></article>
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-chat" xlink:href="#i-chat"/></svg></span><div class="i-body"><div class="i-name">论坛 <span class="badge live">已上线</span></div><p class="i-desc">生态交流论坛，一起聊、一起玩。</p></div></article>
+        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-feedback" xlink:href="#i-feedback"/></svg></span><div class="i-body"><div class="i-name">反馈 <span class="badge live">已上线</span></div><p class="i-desc">意见与问题反馈通道，直达团队。</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关于 ===== -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-kicker">ABOUT</span>
+        <h2 class="sec-title">关于我们</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <img class="about-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Jf8nblxCmoQ1RCxjaZfcr2NXnQd" alt="喵科大吉祥物">
+          <h3>软萌外壳，硬核工程</h3>
+          <p>我们是一支自建全套基础设施的小团队：从统一登录、后台管理，到启动器、网盘与各类应用，全部自己动手。<strong>先底座、后应用</strong>，用软萌的外壳，承载扎实的工程。</p>
+        </div>
+        <div class="principle reveal">
+          <div class="pr"><b>先底座，后应用</b><span>基建永远先于功能，稳是第一优先级。</span></div>
+          <div class="pr"><b>一个账号，全套生态</b><span>SSO 贯穿所有站点，登录一次，随处可用。</span></div>
+          <div class="pr"><b>为玩家，也为队友</b><span>既要好玩，也要好用；玩家体验与团队工具并重。</span></div>
+          <div class="pr"><b>自己动手，持续生长</b><span>自研为主，产品与基建持续迭代，让生态不断长大。</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Jf8nblxCmoQ1RCxjaZfcr2NXnQd" alt=""><b>喵科大</b></div>
+        <p>梦之韵 / MCY 团队的技术生态与品牌。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <a href="https://mcy.camzy.tech">MCY 启动器</a>
+        <a href="https://pan.liminalily.com">企业网盘</a>
+        <a href="https://docs.camzy.tech">文档中心</a>
+        <a href="#products">全部生态</a>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <a href="https://player.camzy.uno">玩家门户</a>
+        <a href="https://form.camzy.uno">论坛</a>
+        <a href="https://fk.camzy.uno">反馈</a>
+        <a href="#about">关于团队</a>
+      </div>
+      <div>
+        <h4>域名体系</h4>
+        <div class="foot-tags">
+          <span>camzy.tech</span><span>camzy.uno</span><span>catfix.top</span><span>liminalily.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 喵科大 Camzy · 用软萌的云，撑起硬核的生态</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('mobileMenu');
+  var toast=document.getElementById('toast');
+  var toastTimer=null;
+
+  function toggleMenu(force){
+    var open = typeof force==='boolean'?force:!menu.classList.contains('open');
+    menu.classList.toggle('open',open);
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded', open?'true':'false');
+  }
+  burger.addEventListener('click',function(){toggleMenu();});
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){toggleMenu(false);});
+  });
+
+  function showToast(msg){
+    toast.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.classList.remove('show');},2200);
+  }
+
+  // 生态卡片：已上线->跳转；开发中->提示
+  document.querySelectorAll('.p-card').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(card.dataset.url){ window.open(card.dataset.url,'_blank','noopener'); }
+      else if(card.dataset.toast){ showToast(card.dataset.toast); }
+    });
+  });
+
+  // 玩具岛入口：提示域名
+  document.querySelectorAll('[data-toast]').forEach(function(el){
+    if(el.classList.contains('p-card'))return;
+    el.addEventListener('click',function(e){
+      e.preventDefault();showToast(el.dataset.toast);
+    });
+  });
+
+  // 滚动显现（尊重 reduced motion）
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){
+    reveals.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.12});
+    reveals.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
