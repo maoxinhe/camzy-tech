@@ -108,6 +108,7 @@ button{font-family:inherit;border:none;background:none;cursor:pointer}
 .badge{font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap}
 .badge.live{background:var(--pink-100);color:var(--rose-deep)}
 .badge.dev{background:#EEE9E4;color:var(--muted)}
+.badge.dead{background:#E9E2DD;color:#9A8578}
 .p-name{font-size:18px;font-weight:900;color:var(--ink)}
 .p-desc{font-size:14.5px;color:var(--muted);flex:1}
 .p-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
@@ -117,7 +118,7 @@ button{font-family:inherit;border:none;background:none;cursor:pointer}
 /* ---------- 基础设施 ---------- */
 .infra-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .comm-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.i-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;display:flex;gap:15px;align-items:flex-start;transition:transform .22s,box-shadow .22s;width:100%;text-align:left}
+.i-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;display:flex;gap:15px;align-items:flex-start;cursor:pointer;transition:transform .22s,box-shadow .22s;width:100%;text-align:left}
 .i-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .i-ic{width:46px;height:46px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;font-size:23px;background:var(--pink-100);color:var(--rose)}
 .i-body{flex:1;min-width:0}
@@ -243,7 +244,7 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
       <span class="eyebrow"><span class="dot"></span> CAMZY · 喵科大生态</span>
       <h1 class="hero-title">喵科大</h1>
       <p class="hero-sub">一朵软萌的云，撑起一整个数字生态</p>
-      <p class="hero-desc">喵科大是「梦之韵 / MCY」团队的品牌与技术生态：从 MC 启动器、浏览器、企业网盘，到统一登录与云端基建，把玩家体验和团队工具，做成一套温柔又可靠的基础设施。</p>
+      <p class="hero-desc">喵科大是「梦之韵 / CMY」团队的品牌与技术生态：从 CMY 启动器、浏览器、企业网盘，到统一登录与云端基建，把玩家体验和团队工具，做成一套温柔又可靠的基础设施。</p>
       <div class="hero-actions">
         <a href="#products" class="btn btn-primary">查看生态</a>
         <a href="#about" class="btn btn-ghost">关于我们</a>
@@ -264,11 +265,11 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
         <p class="sec-desc">围绕 MC 玩家与团队工作流，自研从启动器到云盘的全套产品。点击「已上线」卡片可直接访问，开发中的项目敬请期待。</p>
       </div>
       <div class="p-grid">
-        <article class="p-card reveal" data-url="https://mcy.camzy.tech">
+        <article class="p-card reveal" data-url="https://cmy.camzy.tech">
           <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-rocket" xlink:href="#i-rocket"/></svg></span><span class="badge live">已上线</span></div>
-          <div class="p-name">MCY 启动器</div>
+          <div class="p-name">CMY 启动器</div>
           <p class="p-desc">梦之韵专用启动器，自动更新、云端版本同步，一键开玩。</p>
-          <div class="p-meta"><code>mcy.camzy.tech</code><span class="p-go">访问 ↗</span></div>
+          <div class="p-meta"><code>cmy.camzy.tech</code><span class="p-go">访问 ↗</span></div>
         </article>
         <article class="p-card reveal" data-toast="喵科大浏览器开发中，敬请期待">
           <div class="p-top"><span class="p-ic c-lav"><svg class="icon"><use href="#i-globe" xlink:href="#i-globe"/></svg></span><span class="badge dev">开发中</span></div>
@@ -306,10 +307,10 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
           <p class="p-desc">在浏览器里直接开玩 MC，免下载、随开随玩。</p>
           <div class="p-meta"><code>mc.web.camzy.uno</code><span class="p-go">敬请期待</span></div>
         </article>
-        <article class="p-card reveal" data-toast="喵科大 根域杀手开发中，敬请期待">
+        <article class="p-card reveal" data-toast="猫科大极域杀手开发中，敬请期待">
           <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-target" xlink:href="#i-target"/></svg></span><span class="badge dev">开发中</span></div>
-          <div class="p-name">喵科大 根域杀手</div>
-          <p class="p-desc">喵科大在根域层面的技术探索项目。</p>
+          <div class="p-name">猫科大极域杀手</div>
+          <p class="p-desc">极域层面的技术探索项目。</p>
           <div class="p-meta"><code>killer.camzy.tech</code><span class="p-go">敬请期待</span></div>
         </article>
         <article class="p-card reveal" data-toast="喵科大 启动页开发中，敬请期待">
@@ -324,11 +325,11 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
           <p class="p-desc">官网的开发预览环境，提前看新变化。</p>
           <div class="p-meta"><code>miao.camzy.tech</code><span class="p-go">敬请期待</span></div>
         </article>
-        <article class="p-card reveal" data-toast="官网(dev)开发中，敬请期待">
-          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-layout" xlink:href="#i-layout"/></svg></span><span class="badge dev">开发中</span></div>
-          <div class="p-name">官网(dev)</div>
-          <p class="p-desc">官网主域名，正在迭代中。</p>
-          <div class="p-meta"><code>www.camzy.tech</code><span class="p-go">敬请期待</span></div>
+        <article class="p-card reveal" data-url="https://www.camzy.tech">
+          <div class="p-top"><span class="p-ic c-pink"><svg class="icon"><use href="#i-layout" xlink:href="#i-layout"/></svg></span><span class="badge live">已上线</span></div>
+          <div class="p-name">喵科大官网</div>
+          <p class="p-desc">官网主域名，现已上线。</p>
+          <div class="p-meta"><code>www.camzy.tech</code><span class="p-go">访问 ↗</span></div>
         </article>
       </div>
     </div>
@@ -340,13 +341,13 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
       <div class="sec-head reveal">
         <span class="sec-kicker">INFRASTRUCTURE</span>
         <h2 class="sec-title">基建 · 先底座，后应用</h2>
-        <p class="sec-desc">统一登录、后台管理、文件分发与工作站——上层产品都跑在自建的底座上。</p>
+        <p class="sec-desc">统一登录、后台管理与工作站——上层产品都跑在自建的底座上。</p>
       </div>
       <div class="infra-grid">
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-key" xlink:href="#i-key"/></svg></span><div class="i-body"><div class="i-name">SSO 统一登录 <span class="badge live">已上线</span></div><p class="i-desc">一个账号，通行整个喵科大生态。</p></div></article>
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-terminal" xlink:href="#i-terminal"/></svg></span><div class="i-body"><div class="i-name">后台工作站 <span class="badge live">已上线</span></div><p class="i-desc">管理喵科大生态的总控台。</p></div></article>
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-download" xlink:href="#i-download"/></svg></span><div class="i-body"><div class="i-name">文件拉取 <span class="badge live">已上线</span></div><p class="i-desc">稳定可靠的文件分发与拉取通道。</p></div></article>
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg></span><div class="i-body"><div class="i-name">慧管家工作站 <span class="badge live">已上线</span></div><p class="i-desc">日常运营与协作的工作台。</p></div></article>
+        <article class="i-card reveal" data-url="https://sso.camzy.uno"><span class="i-ic"><svg class="icon"><use href="#i-key" xlink:href="#i-key"/></svg></span><div class="i-body"><div class="i-name">SSO 统一登录 <span class="badge live">已上线</span></div><p class="i-desc">一个账号，通行整个喵科大生态。</p></div></article>
+        <article class="i-card reveal" data-url="https://admin.camzy.uno"><span class="i-ic"><svg class="icon"><use href="#i-terminal" xlink:href="#i-terminal"/></svg></span><div class="i-body"><div class="i-name">后台工作站 <span class="badge live">已上线</span></div><p class="i-desc">管理喵科大生态的总控台。</p></div></article>
+        <article class="i-card reveal" data-toast="文件拉取已烂尾"><span class="i-ic"><svg class="icon"><use href="#i-download" xlink:href="#i-download"/></svg></span><div class="i-body"><div class="i-name">文件拉取 <span class="badge dead">烂尾</span></div><p class="i-desc">文件分发与拉取通道，目前已暂停服务。</p></div></article>
+        <article class="i-card reveal" data-url="https://work.camzy.uno"><span class="i-ic"><svg class="icon"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg></span><div class="i-body"><div class="i-name">慧管家工作站 <span class="badge live">已上线</span></div><p class="i-desc">日常运营与协作的工作台。</p></div></article>
       </div>
     </div>
   </section>
@@ -360,9 +361,9 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
         <p class="sec-desc">玩家门户、论坛与反馈——玩家和团队之间的每一道门。</p>
       </div>
       <div class="comm-grid">
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-users" xlink:href="#i-users"/></svg></span><div class="i-body"><div class="i-name">玩家门户 <span class="badge live">已上线</span></div><p class="i-desc">账号、资源与专属服务一站直达。</p></div></article>
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-chat" xlink:href="#i-chat"/></svg></span><div class="i-body"><div class="i-name">论坛 <span class="badge live">已上线</span></div><p class="i-desc">生态交流论坛，一起聊、一起玩。</p></div></article>
-        <article class="i-card reveal"><span class="i-ic"><svg class="icon"><use href="#i-feedback" xlink:href="#i-feedback"/></svg></span><div class="i-body"><div class="i-name">反馈 <span class="badge live">已上线</span></div><p class="i-desc">意见与问题反馈通道，直达团队。</p></div></article>
+        <article class="i-card reveal" data-url="https://player.camzy.uno"><span class="i-ic"><svg class="icon"><use href="#i-users" xlink:href="#i-users"/></svg></span><div class="i-body"><div class="i-name">玩家门户 <span class="badge live">已上线</span></div><p class="i-desc">账号、资源与专属服务一站直达。</p></div></article>
+        <article class="i-card reveal" data-toast="论坛已烂尾"><span class="i-ic"><svg class="icon"><use href="#i-chat" xlink:href="#i-chat"/></svg></span><div class="i-body"><div class="i-name">论坛 <span class="badge dead">烂尾</span></div><p class="i-desc">生态交流论坛，目前已暂停服务。</p></div></article>
+        <article class="i-card reveal" data-url="https://fk.camzy.uno"><span class="i-ic"><svg class="icon"><use href="#i-feedback" xlink:href="#i-feedback"/></svg></span><div class="i-body"><div class="i-name">反馈 <span class="badge live">已上线</span></div><p class="i-desc">意见与问题反馈通道，直达团队。</p></div></article>
       </div>
     </div>
   </section>
@@ -397,11 +398,11 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Jf8nblxCmoQ1RCxjaZfcr2NXnQd" alt=""><b>喵科大</b></div>
-        <p>梦之韵 / MCY 团队的技术生态与品牌。</p>
+        <p>梦之韵 / CMY 团队的技术生态与品牌。</p>
       </div>
       <div>
         <h4>产品</h4>
-        <a href="https://mcy.camzy.tech">MCY 启动器</a>
+        <a href="https://cmy.camzy.tech">CMY 启动器</a>
         <a href="https://pan.liminalily.com">企业网盘</a>
         <a href="https://docs.camzy.tech">文档中心</a>
         <a href="#products">全部生态</a>
@@ -409,7 +410,6 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
       <div>
         <h4>社区</h4>
         <a href="https://player.camzy.uno">玩家门户</a>
-        <a href="https://form.camzy.uno">论坛</a>
         <a href="https://fk.camzy.uno">反馈</a>
         <a href="#about">关于团队</a>
       </div>
@@ -453,6 +453,14 @@ footer{background:#2E2229;color:#D8C6CE;padding:54px 0 30px}
 
   // 生态卡片：已上线->跳转；开发中->提示
   document.querySelectorAll('.p-card').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(card.dataset.url){ window.open(card.dataset.url,'_blank','noopener'); }
+      else if(card.dataset.toast){ showToast(card.dataset.toast); }
+    });
+  });
+
+  // 基建/社区卡片：可访问->跳转；烂尾->提示
+  document.querySelectorAll('.i-card').forEach(function(card){
     card.addEventListener('click',function(e){
       if(card.dataset.url){ window.open(card.dataset.url,'_blank','noopener'); }
       else if(card.dataset.toast){ showToast(card.dataset.toast); }
